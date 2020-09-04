@@ -5,23 +5,20 @@ import s from './Container.module.css';
 
 const Container = ({ title, children }) => (
   <section className={s.section}>
-    {title &&
-      <h2 className={s.heading}>
-        {title}
-      </h2>
-    }
+    {title && <h2 className={s.heading}>{title}</h2>}
     {children}
   </section>
-)
+);
 Container.defaultProps = {
-  title: ''
-}
+  title: '',
+};
 
 Container.propTypes = {
   title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node]).isRequired
-}
+    PropTypes.node,
+  ]).isRequired,
+};
 
 export default Container;
